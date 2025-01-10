@@ -9,6 +9,31 @@
 </head>
 <body>
     <?php include('html/nav.php'); ?>
-        
+     <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <h1>Thêm sinh viên</h1>
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
+                        <label for="floatingInput">Họ và tên</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingPassword" placeholder="Tuổi">
+                        <label for="floatingPassword">Tuổi</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Điện thoại">
+                        <label>Điện thoại</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <button type="submit" class="btn btn-primary">Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+     </div>   
 </body>
 </html>
