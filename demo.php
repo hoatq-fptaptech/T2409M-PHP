@@ -21,3 +21,38 @@ for($i=0;$i< count(value: $foods); $i++){
 foreach($foods as $item){
     echo "<p>$item</p>";
 }
+
+$sv = [
+    "name"=> "Nguyen Van A",
+    "age"=> 18,
+    "tel"=> "0987654321"
+];
+
+echo "<p>".$sv["name"]."</p>";
+echo "<p>".$sv["age"]."</p>";
+echo "<p>".$sv["tel"]."</p>";
+
+$ds = [
+    [
+        "name"=> "Nguyen Van A",
+        "age"=> 18,
+        "tel"=> "0987654321"
+    ],
+    [
+        "name"=> "Nguyen Van A",
+        "age"=> 18,
+        "tel"=> "0987654321"
+    ],
+    [
+        "name"=> "Nguyen Van A",
+        "age"=> 18,
+        "tel"=> "0987654321"
+    ]
+];
+foreach($ds as $s){
+    // $s ->  laf thong tin 1 sinh vien
+    echo $s['name'];
+    echo $s['age'];
+    echo $s['tel'];
+    echo "<br/>";
+}
