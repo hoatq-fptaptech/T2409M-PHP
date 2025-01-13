@@ -1,21 +1,23 @@
 <?php 
-$ds = [
-    [
-        "name"=> "Nguyen Van A",
-        "age"=> 18,
-        "tel"=> "0987654321"
-    ],
-    [
-        "name"=> "Nguyen Van A",
-        "age"=> 18,
-        "tel"=> "0987654321"
-    ],
-    [
-        "name"=> "Nguyen Van A",
-        "age"=> 18,
-        "tel"=> "0987654321"
-    ]
-];
+$ds = [];
+// 1. Kết nối DB
+$host = 'localhost';
+$user = "root";
+$pass = "root";
+$db = "t2409m";
+
+$conn = new mysqli($host,$user,$pass,$db);
+if($conn->connect_error){
+    die("Kết nối thất bại");
+}
+// 2. Truy vấn lấy dữ liệu
+$sql = "select * from sinhvien";
+$rs = $conn->query($sql);
+if($rs->num_rows > 0){
+    while($row = $rs->fetch_assoc()){
+        $ds[] = $row;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
