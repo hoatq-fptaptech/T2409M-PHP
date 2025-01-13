@@ -14,17 +14,17 @@
             <div class="col"></div>
             <div class="col">
                 <h1>Thêm sinh viên</h1>
-                <form>
+                <form action="/luusinhvien.php" method="post">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
+                        <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
                         <label for="floatingInput">Họ và tên</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="floatingPassword" placeholder="Tuổi">
+                        <input name="age" type="number" class="form-control" id="floatingPassword" placeholder="Tuổi">
                         <label for="floatingPassword">Tuổi</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" placeholder="Điện thoại">
+                        <input name="tel" type="text" class="form-control" placeholder="Điện thoại">
                         <label>Điện thoại</label>
                     </div>
                     <div class="form-floating mb-3">
