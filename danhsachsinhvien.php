@@ -1,15 +1,8 @@
 <?php 
 $ds = [];
 // 1. Kết nối DB
-$host = 'localhost';
-$user = "root";
-$pass = "root";
-$db = "t2409m";
-
-$conn = new mysqli($host,$user,$pass,$db);
-if($conn->connect_error){
-    die("Kết nối thất bại");
-}
+require_once("./functions/db.php");
+$conn = ketnoidb();
 // 2. Truy vấn lấy dữ liệu
 $sql = "select * from sinhvien";
 $rs = $conn->query($sql);
