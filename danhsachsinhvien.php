@@ -31,6 +31,7 @@ if($rs->num_rows > 0){
                 <th>Name</th>
                 <th>Age</th>
                 <th>Tel</th>
+                <th></th>
             </thead>
             <tbody>
                 <?php foreach($ds as $item): ?>
@@ -38,6 +39,9 @@ if($rs->num_rows > 0){
                         <td><?php echo $item['name'] ?></td>
                         <td><?php echo $item['age'] ?></td>
                         <td><?php echo $item['tel'] ?></td>
+                        <td>
+                            <a href="/suasinhvien.php?id=<?php echo $item["id"]; ?>"class="btn btn-info">Sửa</a>
+                        </td>
                     </tr>
                <?php endforeach; ?>     
             </tbody>
