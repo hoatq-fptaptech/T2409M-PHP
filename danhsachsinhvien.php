@@ -41,6 +41,7 @@ if($rs->num_rows > 0){
                         <td><?php echo $item['tel'] ?></td>
                         <td>
                             <a href="/suasinhvien.php?id=<?php echo $item["id"]; ?>"class="btn btn-info">Sửa</a>
+                            <a href="/xoasinhvien.php?id=<?php echo $item["id"]; ?>"class="btn btn-danger">Xoá</a>
                         </td>
                     </tr>
                <?php endforeach; ?>     
