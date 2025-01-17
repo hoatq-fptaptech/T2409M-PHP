@@ -14,7 +14,11 @@
             <div class="col"></div>
             <div class="col">
                 <h1>Thêm sinh viên</h1>
-                <form action="/luusinhvien.php" method="post">
+                <form action="/luusinhvien.php" method="post" enctype="multipart/form-data">
+                    <div class="form-floating mb-3">
+                        <input name="avatar" type="file" class="form-control" placeholder="Avatar">
+                        <label for="floatingInputavatar">Avatar</label>
+                    </div>
                     <div class="form-floating mb-3">
                         <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
                         <label for="floatingInput">Họ và tên</label>

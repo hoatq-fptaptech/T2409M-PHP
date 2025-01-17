@@ -28,6 +28,7 @@ if($rs->num_rows > 0){
         <a class="btn btn-primary" href="/themsinhvien.php">Thêm mới</a>
         <table class="table">
             <thead>
+                <th>Avatar</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Tel</th>
@@ -36,6 +37,7 @@ if($rs->num_rows > 0){
             <tbody>
                 <?php foreach($ds as $item): ?>
                     <tr>
+                        <td><img src="<?php echo $item['avatar'] ?>" width="100"/></td>
                         <td><?php echo $item['name'] ?></td>
                         <td><?php echo $item['age'] ?></td>
                         <td><?php echo $item['tel'] ?></td>
