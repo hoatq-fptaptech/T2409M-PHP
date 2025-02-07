@@ -15,7 +15,26 @@
 <body>
     <?php include_once("html/nav.php");?>
     <div class="container">
-        <h1><?php echo $product["name"]; ?></h1>
+        <div class="row">
+            <div class="col-6">
+                <img class="w-100" src="<?php echo $product["image"];?>"/>
+            </div>
+            <div class="col-6">
+                <h1><?php echo $product["name"]; ?></h1>
+                <h3 class="text-danger">$<?php echo round($product["price"]); ?></h3>
+                <p><?php echo $product["description"]; ?></p>
+                <div class="row">
+                    <div class="col-4">
+                    <form action="#" method="post">
+                        <div class="input-group mb-3">
+                            <input name="buy_qty" value="1" type="text" class="form-control" placeholder="Qty" >
+                            <button class="btn btn-outline-primary" type="button" id="button-addon2">Add to cart</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
