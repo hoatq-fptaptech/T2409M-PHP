@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once("functions/db.php");
     $conn = ketnoidb();
     $sql = "select * from products order by id desc limit 8";

@@ -8,7 +8,12 @@ if(isset($_SESSION["cart"])){
 }else{
     $cart = [];
 }
-$cart[$id] = $buy_qty;
+if(isset($cart[$id])){
+    $cart[$id] += $buy_qty;
+}else{
+    $cart[$id] = $buy_qty;
+}
+
 
 $_SESSION["cart"] = $cart;
 

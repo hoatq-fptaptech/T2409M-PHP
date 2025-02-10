@@ -32,7 +32,7 @@
             </li>
         <?php endforeach;?>    
       </ul>
-      <a href="#" class="position-relative me-5">
+      <a href="/cart.php" class="position-relative me-5">
         <i class="bi bi-cart3"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           <?php echo count($cart); ?>
