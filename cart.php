@@ -5,6 +5,16 @@
     }else{
         $cart = [];
     }
+    $ids = array_keys($cart); // [1,5,4]
+    $ids = implode(",",$ids); //[1,5,4] =>  "1,5,4"
+    require_once("functions/db.php");
+    $conn = ketnoidb();
+    $sql = "select * from products where id in ($ids)";
+    $rs = $conn->query($sql);
+    $products = [];
+    while($row= $rs->fetch_assoc()){
+        $products[] = $row;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,13 +28,18 @@
         <table class="table table-stripped">
             <thead>
                 <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
                 <th>Buy QTY</th>
             </thead>
             <tbody>
-                <?php foreach($cart as $id=>$buy_qty):?>
+                <?php foreach($products as $item):?>
                    <tr>
-                        <td><?php echo $id;?></td>
-                        <td><?php echo $buy_qty;?></td>
+                        <td><?php echo $item["id"];?></td>
+                        <td><img width="100" src="<?php echo $item["image"];?>"/></td>
+                        <td><?php echo $item["name"];?></td>
+                        <td><?php echo $cart[$item["id"]];?></td>
+                        
                    </tr>     
                 <?php endforeach;?>    
             </tbody>
