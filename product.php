@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $id = $_GET['id'];
     require_once("functions/db.php");
     $conn = ketnoidb();
@@ -25,7 +26,8 @@
                 <p><?php echo $product["description"]; ?></p>
                 <div class="row">
                     <div class="col-4">
-                    <form action="#" method="post">
+                    <form action="/add_to_cart.php" method="post">
+                        <input name="id" value ="<?php  echo $product["id"];?>"type="hidden"/>
                         <div class="input-group mb-3">
                             <input name="buy_qty" value="1" type="text" class="form-control" placeholder="Qty" >
                             <button class="btn btn-outline-primary" type="button" id="button-addon2">Add to cart</button>

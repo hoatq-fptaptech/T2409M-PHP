@@ -27,6 +27,12 @@
             </li>
         <?php endforeach;?>    
       </ul>
+      <a href="#" class="position-relative me-5">
+        <i class="bi bi-cart3"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </a>
       <form action="/search.php" method="GET" class="d-flex" role="search">
         <input name="q" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
