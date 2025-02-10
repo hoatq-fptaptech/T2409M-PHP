@@ -7,6 +7,11 @@
     while($row = $rs->fetch_assoc()){
         $cats[] = $row;
     }
+    if(isset($_SESSION["cart"])){
+      $cart = $_SESSION["cart"];
+    }else{
+      $cart = [];
+    }
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
@@ -30,7 +35,7 @@
       <a href="#" class="position-relative me-5">
         <i class="bi bi-cart3"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          0
+          <?php echo count($cart); ?>
         </span>
       </a>
       <form action="/search.php" method="GET" class="d-flex" role="search">

@@ -29,8 +29,8 @@
                     <form action="/add_to_cart.php" method="post">
                         <input name="id" value ="<?php  echo $product["id"];?>"type="hidden"/>
                         <div class="input-group mb-3">
-                            <input name="buy_qty" value="1" type="text" class="form-control" placeholder="Qty" >
-                            <button class="btn btn-outline-primary" type="button" id="button-addon2">Add to cart</button>
+                            <input name="buy_qty" value="1" type="number" class="form-control" placeholder="Qty" >
+                            <button class="btn btn-outline-primary" type="submit" id="button-addon2">Add to cart</button>
                         </div>
                     </form>
                     </div>
