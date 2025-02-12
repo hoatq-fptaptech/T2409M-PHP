@@ -32,12 +32,17 @@ $status =0 ;
 // thêm đơn hàng
 $sql = "insert into orders(created_at,grand_total,customer_name,customer_tel,customer_address,payment_method,paid,status)
     values('$created_at',$grand_total,'$customer_name','$customer_tel','$customer_address','$payment_method',$paid,$status)";
-$conn->query($sql);    
-// thêm các sản phẩm đã mua
+if($conn->query($sql) === true){
+    $order_id = $conn->insert_id;
 
-foreach($products as $item){
-    $product_id = $item["id"];
-    $t = $item["price"] * $cart[$product_id];
-    $sql = "insert into order_products(order_id,product_id,buy_qty,price)
-     values()";
-}
+    // thêm các sản phẩm đã mua
+    foreach($products as $item){
+        $product_id = $item["id"];
+        $price = $item["price"];
+        $buy_qty = $cart[$product_id];
+        $sql = "insert into order_products(order_id,product_id,buy_qty,price)
+        values($order_id,$product_id,$buy_qty,$price)";
+        $conn->query($sql);
+    }
+    header("Location: /thankyou.php?order_id=$order_id");
+} 
