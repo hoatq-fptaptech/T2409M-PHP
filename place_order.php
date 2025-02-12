@@ -44,5 +44,6 @@ if($conn->query($sql) === true){
         values($order_id,$product_id,$buy_qty,$price)";
         $conn->query($sql);
     }
+    $_SESSION["cart"] = [];
     header("Location: /thankyou.php?order_id=$order_id");
 } 
