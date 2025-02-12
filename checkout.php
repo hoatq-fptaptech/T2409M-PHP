@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <form action="#" method="post">
+                <form action="/place_order.php" method="post">
                     <h4>Customer infomation</h4>
                     <div class="row">
                         <div class="col-6 mb-3">
