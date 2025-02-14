@@ -1,4 +1,5 @@
 <?php 
+require_once("functions/paypal.php");
 $customer_name = $_POST["customer_name"];
 $customer_tel = $_POST["customer_tel"];
 $customer_address = $_POST["customer_address"];
@@ -45,5 +46,20 @@ if($conn->query($sql) === true){
         $conn->query($sql);
     }
     $_SESSION["cart"] = [];
-    header("Location: /thankyou.php?order_id=$order_id");
+    if($payment_method == "PAYPAL"){
+        $client_id = "AZFEOYBfFE-wy0qQI2cwemlCTeSwUM0PoadhQ23nJbHoFSxQQzW7w3OsHROlaS9nnYOg87jDxBVilTht";
+        $client_secret = "EKR8pJZBBJDAC_oTl7zUQYPSpyh4XvhmHSQm8uKDPOBBbjDFtnjCKyJxzb20ciT9zBp8_tPT_S62uNJi";
+        $success_url = "http://localhost:8888/success.php?order_id=$order_id";
+        $fail_url = "http://localhost:8888/fail.php?order_id=$order_id";
+
+        $access_token = get_access_token($client_id,$client_secret);
+        $payment = create_payment($access_token,$success_url,
+            $fail_url,$grand_total);
+        // chuyển sang paypal để trả tiền
+        header("Location: ".$payment["links"]["1"]["href"]); 
+    
+    }else{
+        header("Location: /thankyou.php?order_id=$order_id");
+    }
+    
 } 
